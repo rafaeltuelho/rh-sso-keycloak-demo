@@ -1,0 +1,9 @@
+{
+  "realm": "demo",
+  "realm-public-key": "<put your pub key here>",
+  "auth-server-url": "http://localhost:8180/auth",
+  "ssl-required": "external",
+  "resource": "kitchensink",
+  "public-client": true,
+  "use-resource-role-mappings": false
+}
