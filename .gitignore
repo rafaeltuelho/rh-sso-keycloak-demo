@@ -17,4 +17,6 @@ log/
 target/
 
 # Secret files
-*.secret
+*.secret 
+*.zip
+*.tar*

@@ -25,12 +25,12 @@
         <h:form id="log">
 	      <h:panelGrid columns="2">
 	          <h:commandLink id="login"
-	              action="#{sSOController.login}"
+	              action="#{ssoController.login}"
 	              value="Login" styleClass="login"
 	              disabled="#{not empty request.remoteUser}" />
 	
 	          <h:commandLink id="logout"
-	              action="#{sSOController.logout}"
+	              action="#{ssoController.logout}"
 	              value="Logout" styleClass="logout"
 	              disabled="#{empty request.remoteUser}" />
 
@@ -46,13 +46,13 @@
  
        <h:panelGrid columns="2" columnClasses="titleCell" rendered="#{not empty request.remoteUser}">
 	       <h:outputLabel for="userName" value="Username:" />
-	       <h:outputText name="userName" value="#{sSOController.userAuthToken.preferredUsername}" /> 
+	       <h:outputText name="userName" value="#{ssoController.userAuthToken.preferredUsername}" /> 
 
 	       <h:outputLabel for="givenName" value="Name:" />
-	       <h:outputText name="givenName" value="#{sSOController.userAuthToken.givenName}" /> 
+	       <h:outputText name="givenName" value="#{ssoController.userAuthToken.givenName}" /> 
 
 	       <h:outputLabel for="emailAddr" value="email:" />
-	       <h:outputText name="emailAddr" value="#{sSOController.userAuthToken.email}" /> 
+	       <h:outputText name="emailAddr" value="#{ssoController.userAuthToken.email}" /> 
 
 	   </h:panelGrid>
 	</ui:define>

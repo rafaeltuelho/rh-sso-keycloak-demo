@@ -1,43 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-	<display-name>jboss-kitchensink</display-name>
-	<context-param>
-		<description>JSF View State</description>
-		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
-		<param-value>client</param-value>
-	</context-param>
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-	</welcome-file-list>
-	<security-constraint>
-		<web-resource-collection>
-			<web-resource-name>rest</web-resource-name>
-			<url-pattern>/rest/*</url-pattern>
-		</web-resource-collection>
-		<auth-constraint>
-			<role-name>default-role</role-name>
-		</auth-constraint>
-	</security-constraint>
-	<security-constraint>
-		<web-resource-collection>
-			<web-resource-name>User</web-resource-name>
-			<url-pattern>/login/*</url-pattern>
-		</web-resource-collection>
-		<auth-constraint>
-			<role-name>default-role</role-name>
-		</auth-constraint>
-	</security-constraint>
-
-	<!-- <security-constraint> <web-resource-collection> <url-pattern>/*</url-pattern> 
-		</web-resource-collection> <user-data-constraint> <transport-guarantee>CONFIDENTIAL</transport-guarantee> 
-		</user-data-constraint> </security-constraint> -->
-	<login-config>
-		<auth-method>KEYCLOAK</auth-method>
-		<realm-name>demo</realm-name>
-	</login-config>
-	<security-role>
-		<role-name>default-role</role-name>
-	</security-role>
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+ <display-name>jboss-kitchensink</display-name>
+ <context-param>
+  <description>JSF View State</description>
+  <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+  <param-value>client</param-value>
+ </context-param>
+ <welcome-file-list>
+  <welcome-file>index.html</welcome-file>
+ </welcome-file-list>
+ <security-constraint>
+  <web-resource-collection>
+   <web-resource-name>rest</web-resource-name>
+   <url-pattern>/rest/*</url-pattern>
+  </web-resource-collection>
+  <auth-constraint>
+   <role-name>ipausers</role-name>
+  </auth-constraint>
+ </security-constraint>
+ <security-constraint>
+  <web-resource-collection>
+   <web-resource-name>User</web-resource-name>
+   <url-pattern>/login/*</url-pattern>
+  </web-resource-collection>
+  <auth-constraint>
+   <role-name>default-realm-role</role-name>
+  </auth-constraint>
+ </security-constraint>
+ <login-config>
+  <auth-method>KEYCLOAK</auth-method>
+  <realm-name>demo</realm-name>
+ </login-config>
+ <security-role>
+  <role-name>ipausers</role-name>
+ </security-role>
+ <security-role>
+  <role-name>default-realm-role</role-name>
+ </security-role>
 </web-app>

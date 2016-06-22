@@ -1,6 +1,7 @@
 package org.jboss.as.quickstarts.kitchensink.controller;
 
-import java.io.IOException;
+import java.io.Serializable;
+import java.security.Principal;
 import java.util.logging.Logger;
 
 import javax.enterprise.context.SessionScoped;
@@ -16,12 +17,9 @@ import org.keycloak.KeycloakPrincipal;
 import org.keycloak.KeycloakSecurityContext;
 import org.keycloak.representations.IDToken;
 
-import java.io.Serializable;
-import java.security.Principal;
-
 @Named
 @SessionScoped
-public class SSOController implements Serializable {
+public class SsoController implements Serializable {
 
 	private static final long serialVersionUID = -1369259560018805262L;
 
@@ -31,7 +29,7 @@ public class SSOController implements Serializable {
     @Inject
     private Logger logger;	
     
-    public SSOController() {
+    public SsoController() {
 	}
 
     public void login() {
