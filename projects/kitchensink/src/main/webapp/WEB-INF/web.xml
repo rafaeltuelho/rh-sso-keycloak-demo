@@ -16,7 +16,7 @@
    <url-pattern>/rest/*</url-pattern>
   </web-resource-collection>
   <auth-constraint>
-   <role-name>ipausers</role-name>
+   <role-name>ati-users</role-name>
   </auth-constraint>
  </security-constraint>
  <security-constraint>
@@ -25,17 +25,14 @@
    <url-pattern>/login/*</url-pattern>
   </web-resource-collection>
   <auth-constraint>
-   <role-name>default-realm-role</role-name>
+   <role-name>ati-users</role-name>
   </auth-constraint>
  </security-constraint>
  <login-config>
   <auth-method>KEYCLOAK</auth-method>
-  <realm-name>demo</realm-name>
+  <realm-name>demo-ati</realm-name>
  </login-config>
  <security-role>
-  <role-name>ipausers</role-name>
- </security-role>
- <security-role>
-  <role-name>default-realm-role</role-name>
+  <role-name>ati-users</role-name>
  </security-role>
 </web-app>
